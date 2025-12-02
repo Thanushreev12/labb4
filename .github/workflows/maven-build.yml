@@ -1,17 +1,19 @@
 name: blank
-
 on: push
 
 jobs:
   git:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
+      - name: Show git job
+        run: |
+          echo "This is the git job"
+          git --version || true
 
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Sample build step
+      - name: Build step
         run: echo "This is the build job"
-
